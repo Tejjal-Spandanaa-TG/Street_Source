@@ -1,106 +1,176 @@
-# Street Food Vendor App 🍜
+# Street Food Vendor Management System
 
-A full-stack web application designed to manage and streamline interactions between customers and street food vendors. Built with Next.js, Neon PostgreSQL, and Tailwind CSS.
-
-![App Screenshot](./assets/screenshot.png)
-
-## 🚀 Features
-
-- Vendor profile management (CRUD)
-- Customer reviews and ratings
-- Order and earnings tracking
-- Admin notifications
-- Fully responsive UI
-- Connected to Neon Postgres database
-
-## 🗂️ Tech Stack
-
-- **Frontend**: Next.js (App Router), Tailwind CSS
-- **Backend**: API Routes (RESTful), Prisma ORM
-- **Database**: Neon PostgreSQL
-- **Version Control**: Git + GitHub
+A full-stack web application designed to manage street food vendors, suppliers, volunteers, products, and overall marketplace operations. This system provides role-based dashboards, product management, earnings tracking, and a clean UI for real-time interaction between users and the database.
 
 ---
 
-## 🛠️ Installation
+## Features
 
-### 1. Clone the Repository
+### User Management
 
-```bash
-git clone https://github.com/YOUR_USERNAME/street-food-vendor-app.git
-cd street-food-vendor-app
+* Vendor, Supplier, and Volunteer registration
+* Role-based login and dashboards
+* Profile management with detailed attributes for each role
+
+### Vendor Dashboard
+
+* Product listing and management
+* Add, edit, update, and delete products
+* Real-time reflection of database updates
+* Ratings, reviews, and earnings overview
+
+### Supplier Dashboard
+
+* Supply management
+* Specialization tracking
+* Order statistics
+
+### Volunteer Dashboard
+
+* Delivery tracking metrics
+* Availability and emergency details
+
+### General Modules
+
+* Notifications center
+* Reviews and feedback
+* Data visualization and performance metrics
+
+---
+
+## Technology Stack
+
+### Frontend
+
+* Next.js
+* React
+* Tailwind CSS
+
+### Backend
+
+* Node.js
+* Express.js
+* REST API Architecture
+
+### Database
+
+* MySQL
+* MySQL Workbench
+
+---
+
+## Project Structure
+
+```
+street-food-vendor-app/
+│
+├── app/                 # Frontend pages and components
+├── backend/             # Backend API and database connection
+├── scripts/             # Database initialization scripts
+├── public/              # Assets
+├── .env.local           # Environment variables
+└── README.md
 ```
 
-### 2. Install Dependencies
+---
 
-```bash
+## Database Setup
+
+1. Install MySQL and open MySQL Workbench.
+2. Create a new database:
+
+   ```sql
+   CREATE DATABASE streetsource;
+   ```
+3. Run the schema:
+
+   ```
+   scripts/database-schema.sql
+   ```
+4. Seed initial users, vendors, or products as needed.
+
+To reinitialize:
+
+```
+node scripts/init-database.js
+```
+
+---
+
+## Environment Variables
+
+Create `.env.local` at the project root:
+
+```
+DB_HOST=localhost
+DB_USER=root
+DB_PASSWORD=yourpassword
+DB_NAME=streetsource
+DB_PORT=3306
+```
+
+---
+
+## Running the Project
+
+### 1. Install Dependencies
+
+```
 npm install
 ```
 
-### 3. Set Up Environment Variables
+### 2. Start the Backend
 
-Create a `.env` file in the root and add:
-
-```env
-DATABASE_URL=your_neon_postgres_url
+```
+npm run server
 ```
 
-Replace with your Neon PostgreSQL connection string.
+### 3. Start the Frontend
 
-### 4. Generate Prisma Client
-
-```bash
-npx prisma generate
 ```
-
----
-
-## 🔄 Database Setup
-
-Run the following to apply schema to your database:
-
-```bash
-npx prisma db push
-```
-
-(Optional: Seed or reset DB if needed)
-
----
-
-## 🧪 Running Locally
-
-```bash
 npm run dev
 ```
 
-Visit: [http://localhost:3000](http://localhost:3000)
+Visit:
+
+```
+http://localhost:3000
+```
 
 ---
 
-## 🔍 Demo Flow for CRUD (e.g. Vendors Table)
+## CRUD Demo
 
-1. Navigate to `/vendors`
-2. Create a new vendor using the **Add Vendor** form.
-3. Edit or delete existing vendor entries.
-4. Observe updates reflected in the database (Neon Postgres).
-5. CRUD operations are connected to `/api/vendors` endpoints.
+The project includes full CRUD operations for products.
+Actions include:
 
----
-
-## 📸 Screenshot
-
-*(You can replace the image with the actual UI screenshot)*
-
-![Vendor Table UI](./assets/vendors.png)
+* Adding new products from MySQL Workbench or UI
+* Editing or updating product details
+* Deleting products
+* Automatically showing updated products on the vendor dashboard
 
 ---
 
-## 📬 Contact
+## GitHub Setup
 
-For queries, contact: `your.email@example.com`
+### Initializing the repository
+
+```
+git init
+git add .
+git commit -m "Initial commit"
+git branch -M main
+git remote add origin https://github.com/your-username/your-repo-name.git
+git push -u origin main
+```
 
 ---
 
-## 📝 License
+## Contribution Guidelines
 
-MIT License © 2025
+Pull requests are welcome.
+For major changes, please open an issue first to discuss what you would like to modify.
+
+---
+
+
